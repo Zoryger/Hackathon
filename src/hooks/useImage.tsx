@@ -16,7 +16,7 @@ export const useImage = (title: number) => {
       source = require("../../assets/meteo/Nuage.jpg");
       break;
     case 4:
-      source = require("../../assets/meteo/wind.jfif");
+      source = require("../../assets/meteo/sun.jpg");
       break;
     case 45:
       source = require("../../assets/meteo/fog.webp");
@@ -25,22 +25,22 @@ export const useImage = (title: number) => {
       source = require("../../assets/meteo/fog.webp");
       break;
     case 61:
-      source = require("../../assets/meteo/rain.jfif");
+      source = require("../../assets/meteo/sun.jpg");
       break;
     case 63:
-      source = require("../../assets/meteo/rain.jfif");
+      source = require("../../assets/meteo/sun.jpg");
       break;
     case 65:
-      source = require("../../assets/meteo/rain.jfif");
+      source = require("../../assets/meteo/sun.jpg");
       break;
     case 71:
-      source = require("../../assets/meteo/snow.jfif");
+      source = require("../../assets/meteo/sun.jpg");
       break;
     case 73:
-      source = require("../../assets/meteo/snow.jfif");
+      source = require("../../assets/meteo/sun.jpg");
       break;
     case 75:
-      source = require("../../assets/meteo/snow.jfif");
+      source = require("../../assets/meteo/sun.jpg");
       break;
     default:
       source = require("../../assets/meteo/default.jpg");

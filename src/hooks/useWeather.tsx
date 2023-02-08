@@ -8,6 +8,6 @@ async function fetchData() {
   return json;
 }
 
-export function usemeteo() {
-  return useQuery(["Meteo"], fetchData);
+export function useWeather() {
+  return useQuery(["weather"], fetchData);
 }

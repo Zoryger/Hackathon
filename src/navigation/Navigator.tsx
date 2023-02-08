@@ -1,5 +1,4 @@
 import * as React from "react";
-import { View, Text } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from "../screens/LoginScreen";
@@ -9,16 +8,14 @@ import { Routes } from "./Routes";
 
 const Stack = createNativeStackNavigator();
 
-function App() {
+export function Navigator() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={LoginScreen} />
-        <Stack.Screen name="Terms" component={TermsScreen} />
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name={Routes.LOGIN_SCREEN} component={LoginScreen} />
+        <Stack.Screen name={Routes.TERMS_SCREEN} component={TermsScreen} />
         <Stack.Screen name={Routes.METEO} component={MeteoScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-export default App;
