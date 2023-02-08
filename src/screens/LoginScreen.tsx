@@ -8,13 +8,14 @@ import { ImageBackground } from "react-native";
 
 export default function App() {
   const navigation = useNavigation<any>();
-  const image = require("../../assets/meteo/Nuage.jpg");
   const navigationToMeteo = () => {
     navigation.navigate(Routes.METEO);
   };
   const navigationToTerms = () => {
     navigation.navigate(Routes.TERMS_SCREEN);
   };
+
+  const image = require("../../assets/meteo/Nuage.jpg");
   return (
     <View style={styles.container}>
       <Text style={styles.White}>HelloMétéo</Text>
@@ -40,7 +41,7 @@ export default function App() {
         </Card>
       </ImageBackground>
       <TouchableOpacity style={styles.White} onPress={navigationToTerms}>
-        Read Terms and conditions.
+        <Text>Read Terms and conditions.</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>

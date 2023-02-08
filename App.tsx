@@ -1,15 +1,15 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import App from "./src/navigation/Navigator";
+import { Navigator } from "./src/navigation/Navigator";
 
 const queryClient = new QueryClient({});
 
-const App2 = () => {
+const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <App />
+      <Navigator />
     </QueryClientProvider>
   );
 };
 
 // always export default App otherwise Expo is not happy
-export default App2;
+export default App;
