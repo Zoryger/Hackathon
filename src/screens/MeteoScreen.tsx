@@ -4,7 +4,10 @@ import { SafeAreaView, Text } from "react-native";
 import { useWeather } from "../hooks/useWeather";
 import { WeatherCard } from "../components/WeatherCard";
 
-export const MeteoScreen = () => {
+export const MeteoScreen = (route: {
+  params: { latitude: any; longitude: any };
+}) => {
+  const { latitude, longitude } = route.params;
   const { data, status } = useWeather();
 
   if (status === "loading") {
