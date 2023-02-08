@@ -8,8 +8,13 @@ import { ImageBackground } from "react-native";
 
 export default function App() {
   const navigation = useNavigation<any>();
-  const navigationToMeteo = () => {
-    navigation.navigate(Routes.METEO);
+  const [longi, setlong] = useState("");
+  const [lati, setlat] = useState("");
+  const navigationToMeteo = (lati: string, longi: string) => {
+    navigation.navigate(Routes.METEO, {
+      latitude: lati,
+      longitude: longi,
+    });
   };
   const navigationToTerms = () => {
     navigation.navigate(Routes.TERMS_SCREEN);
@@ -25,16 +30,18 @@ export default function App() {
             style={styles.Element}
             label="Latitude"
             placeholder="50.951163"
+            onChangeText={(value) => setlat(value)}
           />
           <TextInput
             style={styles.Element}
             label="Longitude"
             placeholder="1.883421"
+            onChangeText={(value) => setlong(value)}
           />
           <Button
             style={styles.Button}
             mode="contained"
-            onPress={navigationToMeteo}
+            onPress={() => navigationToMeteo(lati, longi)}
           >
             Météo
           </Button>
