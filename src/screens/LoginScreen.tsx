@@ -20,7 +20,7 @@ export default function App() {
     navigation.navigate(Routes.TERMS_SCREEN);
   };
 
-  const image = require("../../assets/meteo/Nuage.jpg");
+  const image = require("../../assets/weather/cloud.jpg");
   return (
     <View style={styles.container}>
       <Text style={styles.White}>HelloMétéo</Text>

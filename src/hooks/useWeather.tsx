@@ -8,5 +8,5 @@ async function fetchData(lati: string, longi: string) {
 }
 
 export function useWeather(lati: string, longi: string) {
-  return useQuery(["weather"], () => fetchData(lati, longi);
+  return useQuery(["weather"], () => fetchData(lati, longi));
 }

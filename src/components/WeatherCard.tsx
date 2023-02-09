@@ -6,29 +6,22 @@ import { useImage } from "../hooks/useImage";
 interface Props {}
 
 export const WeatherCard = ({ data }: any) => {
-  const {
-    latitude,
-    long,
-    elevation,
-    temperature,
-    windspeed,
-    time,
-    weathercode,
-  } = data;
+  const { latitude, longitude, elevation, current_weather } = data;
   return (
     <Card style={styles.item}>
       <Card.Title
         style={styles.title}
         title={"Météo au coordonées:"}
         titleStyle={styles.title2}
-        subtitle={"Lat: " + latitude + " / Long: " + long}
+        subtitle={"Latitude: " + latitude + " / Longitude: " + longitude}
         subtitleStyle={styles.coordonées}
       />
-      <Card.Cover source={useImage(weathercode)} />
+      <Card.Cover source={useImage(current_weather.weathercode)} />
       <Card.Content style={styles.item}>
-        <Text>
-          lat = {latitude} long = {long} elevation = {elevation} temperature ={" "}
-          {temperature} windspeed = {windspeed} time = {time}
+        <Text style={styles.coordonées}>
+          Elevation = {elevation} m {"\n"}Temperature ={" "}
+          {current_weather.temperature} °C {"\n"}Windspeed ={" "}
+          {current_weather.windspeed} km/h {"\n"}Time = {current_weather.time}
         </Text>
       </Card.Content>
     </Card>
@@ -51,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   coordonées: {
-    fontSize: 17,
+    fontSize: 15,
     textAlign: "center",
   },
 });
