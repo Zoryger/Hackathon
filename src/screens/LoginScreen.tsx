@@ -16,8 +16,8 @@ export default function App() {
       longitude: longi,
     });
   };
-  const navigationToTerms = () => {
-    navigation.navigate(Routes.TERMS_SCREEN);
+  const navigationToMemes = () => {
+    navigation.navigate(Routes.Memes_SCREEN);
   };
 
   const image = require("../../assets/weather/cloud.jpg");
@@ -47,8 +47,8 @@ export default function App() {
           </Button>
         </Card>
       </ImageBackground>
-      <TouchableOpacity style={styles.White} onPress={navigationToTerms}>
-        <Text>Read Terms and conditions.</Text>
+      <TouchableOpacity style={styles.White} onPress={navigationToMemes}>
+        <Text>Memes Generator.</Text>
       </TouchableOpacity>
       <StatusBar style="auto" />
     </View>

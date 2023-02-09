@@ -5,20 +5,17 @@ import { useWeather } from "../hooks/useWeather";
 import { WeatherCard } from "../components/WeatherCard";
 import { useNavigation } from "@react-navigation/native";
 
-export const MeteoScreen = (
-  route: any,
-  params: { latitude: string; longitude: string }
-) => {
+export const MeteoScreen = (route: any) => {
   const navigation = useNavigation<any>();
   function goBack() {
     navigation.goBack();
   }
-  const latitude = params.latitude;
-  const longitude = params.longitude;
-  var data;
-  var status = "success";
-  if (latitude === undefined) {
-    console.log("test");
+  const latitude = "";
+  const longitude = "";
+  // const { latitude, longitude } = route.params;
+  console.log(route.params);
+
+  if (latitude === "") {
     var { data, status } = useWeather("41.919229", "8.738635");
   } else {
     var { data, status } = useWeather(latitude, longitude);

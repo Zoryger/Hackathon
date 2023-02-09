@@ -7,6 +7,7 @@ async function fetchData(lati: string, longi: string) {
   return json;
 }
 
-export function useWeather(lati: string, longi: string) {
-  return useQuery(["weather"], () => fetchData(lati, longi));
+export function useWeather(latitude: string, longitude: string) {
+  // console.log(lati);
+  return useQuery(["weather"], () => fetchData(latitude, longitude));
 }
